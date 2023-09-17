@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- <meta http-equiv="refresh" content="5"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>Home</title>
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/21.0.9/primer.css" integrity="sha512-36ON8XwCQa07KEM/UPtpEVDdoJAj2Az2RMP+Tv3jUqVmFL8hhL/jcuSx5AoaEJ4x+EMLwtmL5KVWxWuYyF0oSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/3.0.0/pure-min.css" integrity="sha512-X2yGIVwg8zeG8N4xfsidr9MqIfIE8Yz1It+w2rhUJMqxUwvbVqC5OPcyRlPKYOw/bsdJut91//NO9rSbQZIPRQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/3.0.0/grids-core-min.min.css" integrity="sha512-ZmILzcgfKBS2OHn2BEgIr3Dewp0HhSG8nsGuzo4FA98GxbCYKZPe1QwJufN8Op3bA7D4kHhYYWFV8izXzGKWKw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/3.0.0/grids-responsive-min.min.css" integrity="sha512-5hr5fSxiYwkxK0EZX2B/DILA1QoyXwIf9ynWVbyMvqcMIDZ0XZKWw+xk9mysLSOLV4iMrBB1t/YAxt/006W4HA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      color: #FFF;
+    }
+
+    .main-menu {
+      /* Or set the width explicitly: */
+      width: 10em;
+
+      /* position: absolute;
+      top: 8rem;
+      left: 4rem; */
+    }
+
+    .overlay>img {
+      display: none;
+      max-width: 50%;
+      max-height: 30%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+    }
+    
+    .main-menu .pure-menu-link {
+      border-left: 3px solid #333;
+      color: #CCC;
+      /* font-variant: small-caps; */
+      font-size: 1.2rem;
+    }
+    .main-menu .pure-menu-link:focus, .pure-menu-link:hover {
+      background: unset;
+      border-left: 3px solid #CCC;
+    }
+  </style>
+  <script>
+    $(function () {
+      $(".overlay-name-img").css({
+        "display": "block"
+      });
+
+      $({
+        blurRadius: 30,
+        size_factor: 1.2,
+      })
+      .animate({
+        blurRadius: 0,
+        size_factor: 1
+      }, {
+        duration: 750,
+        easing: "swing",
+        step: function () {
+          console.log(this.blurRadius);
+          $(".overlay-name-img").css({
+            "-webkit-filter": "blur(" + this.blurRadius + "px)",
+            "filter": "blur(" + this.blurRadius + "px)",
+            "transform": "scale(" + this.size_factor + ") translate(-" + 50/this.size_factor + "%, -" + 50/this.size_factor + "%)"
+          });
+        }
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div class="pure-g">
+    <div class="pure-u-1-3">
+      <p></p>
+    </div>
+    <div class="pure-u-1-3">
+      <p></p>
+    </div>
+    <div class="pure-u-1-3">
+      <p></p>
+    </div>
+  </div>
+  
+  <div class="pure-g" style="position: absolute; left: 0; top: 5%">
+    <div class="pure-u-1-6 pure-u-lg-1-3"></div>
+    <div class="pure-u-1-6">
+      <div class="pure-menu main-menu">
+        <ul class="pure-menu-list">
+          <li class="pure-menu-item">
+            <a href="https://tk233.xyz/" class="pure-menu-link">HOME</a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="https://notes.tk233.xyz/" class="pure-menu-link">LAB NOTES</a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="https://www.youtube.com/channel/UCRgzb2lhOC1rmteTkJNuAGA" class="pure-menu-link">YOUTUBE</a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="https://github.com/T-K-233" class="pure-menu-link">GITHUB</a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="https://twitter.com/t_k_233" class="pure-menu-link">X</a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="https://space.bilibili.com/14120234" class="pure-menu-link">BILIBILI</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="anim-grow-x py-2 color-bg-success"></div> -->
+  <div class="overlay">
+    <img class="overlay-name-img" src="assets/name.png">
+  </div>
+
+</html>
